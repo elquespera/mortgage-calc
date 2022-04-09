@@ -6,7 +6,7 @@ function calcMortgage (principal, rate, years) {
 
   function updateMonthly () {
 	let years = document.getElementById('years').value;
-	let principal = document.getElementById('Principal').value;
+	let principal = document.getElementById('principal').value;
 	let MM = calcMortgage(principal, document.getElementById('ratePA').value, years);
 	document.getElementById('monthly').innerHTML = Math.round(MM);
 	document.getElementById('allTime').innerHTML = Math.round(MM * 12 * years);
@@ -14,7 +14,8 @@ function calcMortgage (principal, rate, years) {
   }
 
   function updatePrincipal (val) {
-	let newValue = Math.round(100 - document.getElementById('Principal').value / document.getElementById('propertyCost').value * 100);
+	let newValue = Math.round(100 - document.getElementById('principal').value / 
+							document.getElementById('propertyCost').value * 100);
 	newValue = Math.min(100, Math.max(5, newValue));
 	document.getElementById('ownResources').value = newValue;
 	updateSlider(newValue)
@@ -24,6 +25,6 @@ function calcMortgage (principal, rate, years) {
 	let principal = Math.round(document.getElementById('propertyCost').value * (100-val) / 100);
 	let own = Math.round(document.getElementById('propertyCost').value * val / 100);
 	document.getElementById('ownResourcesValue').innerHTML = val + '%, ' + own;
-	document.getElementById('Principal').value = principal;
+	document.getElementById('principal').value = principal;
 	updateMonthly();
   }
