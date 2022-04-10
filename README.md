@@ -1,1 +1,1 @@
-https://github.io/elquespera/mortgage-calc/
+https://elquespera.github.io/mortgage-calc/
